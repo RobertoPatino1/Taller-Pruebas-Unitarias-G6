@@ -69,7 +69,7 @@ public class EmployeeTest {
      * Test of cs method, of class Employee.
      */
     @org.junit.jupiter.api.Test
-    public void testCs() {
+    public void testCalculateSalary() {
         System.out.println("cs");
         Employee instance = null;
         float expResult = 0.0F;
