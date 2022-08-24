@@ -12,6 +12,7 @@ package com.mycompany.tallerpruebas;
 public class TallerUnitTests {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Employee instance = new Employee(2000,"USD",10,EmployeeType.Manager);
+        System.out.println(instance.cs());
     }
 }

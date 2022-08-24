@@ -5,6 +5,7 @@
 package tests;
 
 import com.mycompany.tallerpruebas.Employee;
+import com.mycompany.tallerpruebas.EmployeeType;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -91,6 +92,15 @@ public class EmployeeTest {
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+    }
+    @org.junit.jupiter.api.Test
+    public void testCsCCaseManager() {
+        System.out.println("cs");
+        String currency="USD";
+        Employee instance = new Employee(2000,currency,10,EmployeeType.Manager);
+        float expResult = 2007.0F;
+        float result = instance.cs();
+        assertEquals(expResult, result, 0.0);
     }
     
     
