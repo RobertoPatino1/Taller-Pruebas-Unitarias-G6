@@ -14,6 +14,8 @@ public class Employee
     private float bonusPercentage;    
     //variable de tipo employeeType
     private EmployeeType employeeType;    
+    
+    private final Double discount = 0.95;
 
     public Employee(float salary, String currency, 
         float bonusPercentage, EmployeeType employeeType){
@@ -24,7 +26,7 @@ public class Employee
     }
     //calcula el salario dependiendo del tipo de trabajador 
     //y entrega el décimo correspondiente cada 2 meses
-    public float cs() {
+    public float calculateSalary() {
         float salario = 0;
         Date date = new Date();
         //Obtiene la hora local
@@ -35,8 +37,8 @@ public class Employee
         int month = localDate.getMonthValue();
         // Si la moneda es USD, se considera todo el salario,
         // caso contrario se resta 5% por cambio de moneda
-        if(currency == "USD"){salario = salary; }
-        else{salario = (float) (salary * 0.95);}
+        if( currency.equals("USD") ) salario = salary;
+        else{salario = (float) (salary * discount);}
         switch (employeeType)         
         {
             case Worker:
