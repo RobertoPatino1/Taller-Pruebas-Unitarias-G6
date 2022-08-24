@@ -84,6 +84,16 @@ public class EmployeeTest {
         // TODO review the generated test code and remove the default call to fail.
 
     }
+    @org.junit.jupiter.api.Test
+    public void testCsCCaseManager() {
+        System.out.println("cs");
+        String currency="USD";
+        Employee instance = new Employee(2000,currency,10,EmployeeType.Manager);
+        float expResult = 2007.0F;
+        float result = instance.calculateSalary();
+        assertEquals(expResult, result, 0.0);
+    }
+ 
     
     
     
