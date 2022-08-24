@@ -74,16 +74,5 @@ public class Employee
         return 0.0F;
     }
     
-    public static void main(String[] args){
-        Employee worker = new Employee(400.0F,"EU",0.15F,EmployeeType.Worker);
-        Employee manager = new Employee(750.0F,"USD",0.15F,EmployeeType.Manager);
-        Employee supervisor = new Employee(860.0F,"USD",0.30F,EmployeeType.Supervisor);
-        
-        System.out.println(worker.CalculateYearBonus());
-        System.out.println(manager.CalculateYearBonus());
-        System.out.println(supervisor.CalculateYearBonus());
-        
-        
-        System.out.println("-----------");
-    }
+
 }
