@@ -39,62 +39,94 @@ public class EmployeeTest {
         assertNotEquals(null,empleado);
     }
     
-    
-    
-    /**
-     * Test of cs method, of class Employee.
-     */
-    
-    
-    
     @org.junit.jupiter.api.Test
-    public void testCs() {
+    public void testCalculateSalaryWorkerUSD() {
         Employee worker = new Employee(300.0F,"USD",0.15F,EmployeeType.Worker);
-        Employee manager = new Employee(400.0F,"EU",0.15F,EmployeeType.Manager);
-        Employee supervisor = new Employee(500.0F,"USD",0.15F,EmployeeType.Supervisor);
         float expResult1 = 300.0F;
-        float expResult2 = 380.105F;
-        float expResult3 = 500.0525F;
-        float resultW = worker.cs();
-        float resultM = manager.cs();
-        float resultS = supervisor.cs();
+        float resultW = worker.calculateSalary();
         assertEquals(expResult1, resultW);
-        assertEquals(expResult2, resultM);
-        assertEquals(expResult3, resultS);
-
     }
+    
+    public void testCalculateSalaryWorkerEU(){
+        Employee worker = new Employee(300.0F,"EU",0.15F,EmployeeType.Worker);
+        float expResult1 = 285.0F;
+        float resultW = worker.calculateSalary();
+        assertEquals(expResult1, resultW);
+    }
+    public void testCalculateSalaryManagerUSD(){
+        Employee manager = new Employee(400.0F,"USD",0.15F,EmployeeType.Manager);
+        float expResult1 = 400.105F;
+        float resultM = manager.calculateSalary();
+        assertEquals(expResult1, resultM);
+    }
+    public void testCalculateSalaryManagerLB(){
+        Employee manager = new Employee(400.0F,"LB",0.15F,EmployeeType.Manager);
+        float expResult1 = 380.105F;
+        float resultM = manager.calculateSalary();
+        assertEquals(expResult1, resultM);
+    }
+    public void testCalculateSalarySupervisorUSD(){
+        Employee supervisor = new Employee(500.0F,"USD",0.15F,EmployeeType.Supervisor);
+        float expResult1 = 500.0525F;
+        float resultS = supervisor.calculateSalary();
+        assertEquals(expResult1, resultS);
+    }
+    public void testCalculateSalarySupervisorMXN(){
+        Employee supervisor = new Employee(500.0F,"MXN",0.15F,EmployeeType.Supervisor);
+        float expResult1 = 475.0525F;
+        float resultS = supervisor.calculateSalary();
+        assertEquals(expResult1, resultS);
+    }
+
 
     /**
      * Test of CalculateYearBonus method, of class Employee.
      */
     @org.junit.jupiter.api.Test
-    public void testCalculateYearBonus() {
-        Employee worker = new Employee(400.0F,"EU",0.15F,EmployeeType.Worker);
-        Employee manager = new Employee(750.0F,"USD",0.15F,EmployeeType.Manager);
-        Employee supervisor = new Employee(860.0F,"USD",0.30F,EmployeeType.Supervisor);
+    public void testCalculateYearBonusWorkerUSD() {
+        Employee worker = new Employee(400.0F,"USD",0.15F,EmployeeType.Worker);
         float expResult1 = 386.0F;
-        float expResult2 = 1136.0F;
-        float expResult3 = 1053.0F;
         float result1 = worker.CalculateYearBonus();
-        float result2 = manager.CalculateYearBonus();
-        float result3 = supervisor.CalculateYearBonus();
         assertEquals(expResult1, result1);
-        assertEquals(expResult2, result2);
-        assertEquals(expResult3, result3);
-        // TODO review the generated test code and remove the default call to fail.
-
     }
+    
     @org.junit.jupiter.api.Test
-    public void testCsCCaseManager() {
-        System.out.println("cs");
-        String currency="USD";
-        Employee instance = new Employee(2000,currency,10,EmployeeType.Manager);
-        float expResult = 2007.0F;
-        float result = instance.calculateSalary();
-        assertEquals(expResult, result, 0.0);
+    public void testCalculateYearBonusWorkerEU(){
+        Employee worker = new Employee(400.0F,"EU",0.15F,EmployeeType.Worker);
+        float expResult1 = 386.0F;
+        float result1 = worker.CalculateYearBonus();
+        assertEquals(expResult1, result1);
     }
- 
     
+    @org.junit.jupiter.api.Test
+    public void testCalculateYearBonusManagerUSD(){
+        Employee manager = new Employee(750.0F,"USD",0.15F,EmployeeType.Manager);
+        float expResult1 = 1136.0F;
+        float result1 = manager.CalculateYearBonus();
+        assertEquals(expResult1, result1);        
+    }
     
+    @org.junit.jupiter.api.Test
+    public void testCalculateYearBonusManagerLB(){
+        Employee manager = new Employee(750.0F,"LB",0.15F,EmployeeType.Manager);
+        float expResult1 = 1098.5F;
+        float result1 = manager.CalculateYearBonus();
+        assertEquals(expResult1, result1);        
+    }
     
+    @org.junit.jupiter.api.Test
+    public void testCalculateYearBonusSupervisorUSD(){
+        Employee supervisor = new Employee(860.0F,"USD",0.30F,EmployeeType.Supervisor);        
+        float expResult1 = 1053.0F;
+        float result1 = supervisor.CalculateYearBonus();
+        assertEquals(expResult1, result1);        
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testCalculateYearBonusSupervisorMXN(){
+        Employee supervisor = new Employee(860.0F,"MXN",0.30F,EmployeeType.Supervisor);
+        float expResult1 = 1010.0F;
+        float result1 = supervisor.CalculateYearBonus();
+        assertEquals(expResult1, result1);        
+    }
 }

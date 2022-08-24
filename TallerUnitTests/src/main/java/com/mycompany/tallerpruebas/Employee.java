@@ -75,6 +75,4 @@ public class Employee
         }
         return 0.0F;
     }
-    
-
 }
