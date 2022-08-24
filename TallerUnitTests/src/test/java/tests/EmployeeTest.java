@@ -55,9 +55,9 @@ public class EmployeeTest {
         float expResult1 = 300.0F;
         float expResult2 = 380.105F;
         float expResult3 = 500.0525F;
-        float resultW = worker.cs();
-        float resultM = manager.cs();
-        float resultS = supervisor.cs();
+        float resultW = worker.calculateSalary();
+        float resultM = manager.calculateSalary();
+        float resultS = supervisor.calculateSalary();
         assertEquals(expResult1, resultW);
         assertEquals(expResult2, resultM);
         assertEquals(expResult3, resultS);
@@ -86,7 +86,7 @@ public class EmployeeTest {
     }
     @org.junit.jupiter.api.Test
     public void testCsCCaseManager() {
-        System.out.println("cs");
+        System.out.println("cs Manager");
         String currency="USD";
         Employee instance = new Employee(2000,currency,10,EmployeeType.Manager);
         float expResult = 2007.0F;
