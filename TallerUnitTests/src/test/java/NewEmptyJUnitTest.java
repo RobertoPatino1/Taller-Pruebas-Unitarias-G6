@@ -10,10 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author Estudiante
- */
+
 public class NewEmptyJUnitTest {
     
     public NewEmptyJUnitTest() {
