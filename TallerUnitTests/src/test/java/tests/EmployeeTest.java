@@ -20,7 +20,7 @@ public class EmployeeTest {
     
     public EmployeeTest() {
     }
-
+    /*
     @org.junit.jupiter.api.BeforeAll
     public static void setUpClass() throws Exception {
     }
@@ -36,6 +36,7 @@ public class EmployeeTest {
     @org.junit.jupiter.api.AfterEach
     public void tearDown() throws Exception {
     }
+    */
     
     @BeforeAll
     public static void setUpClass() {
@@ -52,6 +53,17 @@ public class EmployeeTest {
     @AfterEach
     public void tearDown() {
     }
+    
+    
+    
+    /*
+    Unit test del constructor
+    */
+    
+    
+    
+    
+    
 
     /**
      * Test of cs method, of class Employee.
@@ -80,5 +92,7 @@ public class EmployeeTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+    
+    
     
 }
