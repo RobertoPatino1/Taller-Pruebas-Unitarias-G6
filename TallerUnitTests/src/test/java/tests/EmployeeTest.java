@@ -99,9 +99,10 @@ public class EmployeeTest {
         String currency="USD";
         Employee instance = new Employee(2000,currency,10,EmployeeType.Manager);
         float expResult = 2007.0F;
-        float result = instance.cs();
+        float result = instance.calculateSalary();
         assertEquals(expResult, result, 0.0);
     }
+ 
     
     
     
